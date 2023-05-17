@@ -13,12 +13,12 @@ const MapPage = ({data}) => {
         SetFloorModal(false)
     }
 
-
     return (
         <div>
             <SecMain />
             <Select data={data} setFloor={setFloor} changeFloor={changeFloor} floorModal={floorModal} SetFloorModal={SetFloorModal} />
             <Map data={data} changeFloor={changeFloor} />
+            <div style={{marginBottom: "35vw"}}></div>
             <CardSubscribe />
         </div>
     )
@@ -29,7 +29,6 @@ export async function getStaticProps() {
 
     const mapFetch = await fetch("https://apimall.weflex.am/api/map")
     const map = await mapFetch.json()
-    console.log('map: ', map);
     
 
 
